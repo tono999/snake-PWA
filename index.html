@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Snake PWA</title>
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1e1e2f">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+  <h1>Snake PWA</h1>
+
+  <div class="info">
+    <span>Puntaje: <span id="score">0</span></span>
+    <span id="status">Listo</span>
+  </div>
+
+  <canvas id="game" width="300" height="300"></canvas>
+
+  <div class="buttons">
+    <button id="startBtn">Iniciar</button>
+    <button id="pauseBtn">Pausar</button>
+    <button id="resetBtn">Reiniciar</button>
+  </div>
+
+  <!-- controles móviles -->
+  <div class="mobile-controls">
+    <button data-dir="up">⬆</button>
+    <div>
+      <button data-dir="left">⬅</button>
+      <button data-dir="down">⬇</button>
+      <button data-dir="right">➡</button>
+    </div>
+  </div>
+
+  <p class="hint">Usa teclado o botones</p>
+</div>
+
+<script src="app.js"></script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js');
+}
+</script>
+
+</body>
+</html>
